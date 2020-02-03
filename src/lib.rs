@@ -87,7 +87,7 @@ pub struct ComponentInfo {
 pub fn get_component_infos(component_dir: &str) -> Vec<ComponentInfo> {
     let mut result = Vec::new();
 
-    let re = Regex::new(r"#\[derive\([^\)]*Component[^\)]*Deserialize[^\)]*\)\][^;]*?struct\s+([^\s]+)\s*\{").unwrap();
+    let re = Regex::new(r"#\[derive\([^\)]*Component[^\)]*Deserialize[^\)]*\)\][^;]*?struct\s+([^\s]+)\s*(\(|\{)").unwrap();
 
     let mut path = component_dir.to_string();
     path.push_str("/*.rs");
